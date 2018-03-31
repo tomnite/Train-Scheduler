@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  
-    // Initialize Firebase
+  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBQKFGsfr5nvhMd7DD5UArKbrgif0rUgVo",
     authDomain: "ucftestproject.firebaseapp.com",
@@ -9,7 +8,7 @@ $(document).ready(function() {
     storageBucket: "ucftestproject.appspot.com",
     messagingSenderId: "588487481642"
   };
-  
+
   firebase.initializeApp(config);
 
   var database = firebase.database();
@@ -51,10 +50,7 @@ $(document).ready(function() {
       var newFreq = childSnapshot.val().frequency;
 
       // First time (subtract 1 yr to ensure it comes before current time)
-      var startTime = moment(newFirstTrainTime, "hh:mm").subtract(
-        1,
-        "years"
-      );
+      var startTime = moment(newFirstTrainTime, "hh:mm").subtract(1, "years");
 
       // Current time
       var currentTime = moment();
@@ -96,4 +92,4 @@ $(document).ready(function() {
       console.log("Errors handled: " + errorObject.code);
     }
   );
-}); 
+});
